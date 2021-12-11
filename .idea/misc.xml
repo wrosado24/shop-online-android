@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/workspace/utp/TiendaOnline/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/workspace/utp/TiendaOnline/app/src/main/res/layout/activity_registro.xml" value="0.20260416666666667" />
         <entry key="..\:/workspace/utp/TiendaOnline/app/src/main/res/layout/fragment_inicio.xml" value="0.20260416666666667" />
         <entry key="..\:/workspace/utp/TiendaOnline/app/src/main/res/layout/productos.xml" value="0.20260416666666667" />
         <entry key="..\:/workspace/utp/TiendaOnline/app/src/main/res/menu/bottom_nav_menu.xml" value="0.35833333333333334" />

@@ -1,5 +1,8 @@
 package com.example.tiendaonline;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -73,6 +76,10 @@ public class InicioFragment extends Fragment {
     }
 
     void listarProductos(){
+        if(obtenerIdUsuario() == 0){
+            Intent it = new Intent(getActivity(), Login.class);
+            getContext().startActivity(it);
+        }
         String enlace = URL;
         productos = new ArrayList<>();
         jrq = new JsonObjectRequest(Request.Method.GET, enlace, null, new Response.Listener<JSONObject>() {
@@ -112,6 +119,17 @@ public class InicioFragment extends Fragment {
         //cola para la peticion
         RequestQueue cola = Volley.newRequestQueue(getContext());
         cola.add(jrq);
+    }
+
+    public int obtenerIdUsuario(){
+        SharedPreferences preferences = getContext().getSharedPreferences("credenciales", Context.MODE_PRIVATE);
+        return preferences.getInt("id", 0);
+
+    }
+
+    public void eliminarPreferencias(){
+        SharedPreferences.Editor editor = getContext().getSharedPreferences("credenciales", Context.MODE_PRIVATE).edit();
+        editor.clear().apply();
     }
 
 
