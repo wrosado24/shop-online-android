@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +26,7 @@ import org.json.JSONObject;
 public class DetalleProducto extends AppCompatActivity {
 
     ImageView imageView;
+    EditText cantidad;
     private static final String URL = "http://192.168.18.6/tiendaVirtual/Controlador.php";
     JsonObjectRequest jrq;
 
@@ -40,19 +42,40 @@ public class DetalleProducto extends AppCompatActivity {
         idescripcion = getIntent().getExtras().getString("descripcionProducto");
         iImagen = getIntent().getExtras().getString("imagenProducto");
         iMonto = getIntent().getExtras().getDouble("montoProducto");
-
         setContentView(R.layout.activity_detalle_producto);
 
+        cantidad = findViewById(R.id.txtCompraCantidadd);
         TextView tvNombre = this.findViewById(R.id.txtDpNombre);
         TextView tvDescripcion = this.findViewById(R.id.txtDpDescripcion);
+        TextView tvMontoProducto = this.findViewById(R.id.txtCompraMontoProducto);
 
         tvNombre.setText(iNombre);
         tvDescripcion.setText(idescripcion);
+        tvMontoProducto.setText("S/. " + String.valueOf(iMonto));
 
         imageView = findViewById(R.id.txtDpImagen);
         Glide.with(this)
                 .load(iImagen)
                 .into(imageView);
+
+        int usuarioLogueado = obtenerIdUsuario();
+
+        TextView tTextoLogueo = this.findViewById(R.id.txtAuth);
+
+        if(usuarioLogueado == 0){
+            tTextoLogueo.setText("Iniciar sesion");
+        }else{
+            tTextoLogueo.setText("Cerrar sesión");
+            eliminarPreferencias();
+        }
+
+        tTextoLogueo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(getApplication(), Login.class);
+                getApplication().startActivity(it);
+            }
+        });
     }
 
     public void comprarProducto(View view){
@@ -62,7 +85,8 @@ public class DetalleProducto extends AppCompatActivity {
             getApplication().startActivity(it);
             Toast.makeText(getApplication(), "Accede a tu cuenta para realizar la compra", Toast.LENGTH_SHORT).show();
         }else{
-            String enlace = URL + "?tag=comprarProducto&productoId="+iproductoId+"&usuarioId="+usuarioId+"&cantidad="+8+"&monto="+iMonto;
+            double monto_total = iMonto *(Integer.parseInt(cantidad.getText().toString()));
+            String enlace = URL + "?tag=comprarProducto&productoId="+iproductoId+"&usuarioId="+usuarioId+"&cantidad="+Integer.parseInt(cantidad.getText().toString())+"&monto="+monto_total;
             System.out.println("enlace: " + enlace);
             jrq = new JsonObjectRequest(Request.Method.GET, enlace, null, new Response.Listener<JSONObject>() {
                 @Override
@@ -84,7 +108,6 @@ public class DetalleProducto extends AppCompatActivity {
                     Log.w("error: ", error);
                     Toast.makeText(getApplication(), error.toString(), Toast.LENGTH_SHORT).show();
                 }
-
             });
 
             //cola para la peticion
@@ -97,6 +120,11 @@ public class DetalleProducto extends AppCompatActivity {
         SharedPreferences preferences = getApplication().getSharedPreferences("credenciales", Context.MODE_PRIVATE);
         return preferences.getInt("id", 0);
 
+    }
+
+    public void eliminarPreferencias(){
+        SharedPreferences.Editor editor = getApplication().getSharedPreferences("credenciales", Context.MODE_PRIVATE).edit();
+        editor.clear().apply();
     }
 
 }

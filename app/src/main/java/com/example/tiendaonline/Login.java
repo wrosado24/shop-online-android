@@ -62,7 +62,7 @@ public class Login extends AppCompatActivity {
                             logueo.setNombre(fila.getString("contrasena"));
                         }
                         guardarCredenciales(logueo.getId(), logueo.getNombre());
-                        Toast.makeText(getApplication(), "Bienvenido " + logueo.getNombre() + " " + logueo.getApellido(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplication(), "Bienvenido " + logueo.getNombre(), Toast.LENGTH_SHORT).show();
 
                         Intent intent = new Intent(Login.this, MainActivity.class);
                         startActivity(intent);

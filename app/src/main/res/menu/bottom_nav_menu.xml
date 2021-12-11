@@ -4,16 +4,16 @@
     <item
         android:id="@+id/inicioFragment"
         android:icon="@drawable/ic_home_black_24dp"
-        android:title="Inicio" />
+        android:title="@string/titulo_inicio" />
 
     <item
         android:id="@+id/comprasFragment"
         android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="Compras" />
+        android:title="@string/titulo_compras" />
 
     <item
         android:id="@+id/mapsFragment"
         android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="Localizacion" />
+        android:title="@string/titulo_maps" />
 
 </menu>

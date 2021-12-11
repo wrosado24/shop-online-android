@@ -45,7 +45,7 @@ public class Adaptador1 extends RecyclerView.Adapter<Adaptador1.myHolder>{
 
         holder.txtNombre.setText(producto.getNombre());
         holder.txtDescripcion.setText(producto.getDescripcion());
-        holder.txtMonto.setText(String.valueOf(producto.getMonto()));
+        holder.txtMonto.setText("S/. " + String.valueOf(producto.getMonto()));
 
         holder.miLayout.setOnClickListener(new View.OnClickListener() {
             @Override

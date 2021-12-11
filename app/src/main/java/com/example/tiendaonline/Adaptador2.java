@@ -36,10 +36,10 @@ public class Adaptador2 extends RecyclerView.Adapter<Adaptador2.myHolder>{
     public void onBindViewHolder(@NonNull Adaptador2.myHolder holder, int position) {
         Compras compra = compras.get(position);
 
-        holder.txtNombre.setText(compra.getNombre());
-        holder.txtSku.setText(compra.getSku());
-        holder.txtMonto.setText(String.valueOf(compra.getMonto()));
-        holder.txtCantidad.setText(String.valueOf(compra.getCantidad()));
+        holder.txtNombre.setText("Nombre: " + compra.getNombre());
+        holder.txtSku.setText("SKU: " + compra.getSku());
+        holder.txtMonto.setText("Monto total: " + String.valueOf(compra.getMonto()));
+        holder.txtCantidad.setText("Cantidad: " + String.valueOf(compra.getCantidad()));
     }
 
     @Override
