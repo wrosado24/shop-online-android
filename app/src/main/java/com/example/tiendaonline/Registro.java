@@ -50,7 +50,7 @@ public class Registro extends AppCompatActivity {
                     String respuesta = response.getString("estado");
 
                     if(respuesta.equalsIgnoreCase("ok")){
-                        Toast.makeText(getApplication(), "Usuario registrado correctamente.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplication(), "Se ha creado tu cuenta correctamente.", Toast.LENGTH_SHORT).show();
                         Intent it = new Intent(getApplication(), Login.class);
                         getApplication().startActivity(it);
                     }
@@ -71,5 +71,10 @@ public class Registro extends AppCompatActivity {
         //cola para la peticion
         RequestQueue cola = Volley.newRequestQueue(getApplication());
         cola.add(jrq);
+    }
+
+    public void volverLogin(View view){
+        Intent it = new Intent(getApplication(), Login.class);
+        getApplication().startActivity(it);
     }
 }

@@ -76,10 +76,8 @@ public class InicioFragment extends Fragment {
     }
 
     void listarProductos(){
-        if(obtenerIdUsuario() == 0){
-            Intent it = new Intent(getActivity(), Login.class);
-            getContext().startActivity(it);
-        }
+        Intent it = new Intent(getContext(), Login.class);
+        getContext().startActivity(it);
         String enlace = URL;
         productos = new ArrayList<>();
         jrq = new JsonObjectRequest(Request.Method.GET, enlace, null, new Response.Listener<JSONObject>() {

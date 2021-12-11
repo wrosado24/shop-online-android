@@ -3,9 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/workspace/utp/TiendaOnline/app/src/main/res/layout/activity_confirmacion_compra.xml" value="0.3625" />
+        <entry key="..\:/workspace/utp/TiendaOnline/app/src/main/res/layout/activity_detalle_producto.xml" value="0.20260416666666667" />
         <entry key="..\:/workspace/utp/TiendaOnline/app/src/main/res/layout/activity_login.xml" value="0.33" />
-        <entry key="..\:/workspace/utp/TiendaOnline/app/src/main/res/layout/activity_registro.xml" value="0.20260416666666667" />
+        <entry key="..\:/workspace/utp/TiendaOnline/app/src/main/res/layout/activity_registro.xml" value="0.33" />
+        <entry key="..\:/workspace/utp/TiendaOnline/app/src/main/res/layout/compras.xml" value="0.3625" />
+        <entry key="..\:/workspace/utp/TiendaOnline/app/src/main/res/layout/fragment_compras.xml" value="0.3625" />
         <entry key="..\:/workspace/utp/TiendaOnline/app/src/main/res/layout/fragment_inicio.xml" value="0.20260416666666667" />
+        <entry key="..\:/workspace/utp/TiendaOnline/app/src/main/res/layout/fragment_maps.xml" value="0.22" />
         <entry key="..\:/workspace/utp/TiendaOnline/app/src/main/res/layout/productos.xml" value="0.20260416666666667" />
         <entry key="..\:/workspace/utp/TiendaOnline/app/src/main/res/menu/bottom_nav_menu.xml" value="0.35833333333333334" />
       </map>

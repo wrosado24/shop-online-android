@@ -15,13 +15,8 @@
         android:label="fragment_compras"
         tools:layout="@layout/fragment_compras" />
     <fragment
-        android:id="@+id/localizacionFragment"
-        android:name="com.example.tiendaonline.LocalizacionFragment"
-        android:label="fragment_localizacion"
-        tools:layout="@layout/fragment_localizacion" />
-    <fragment
-        android:id="@+id/carritoFragment"
-        android:name="com.example.tiendaonline.CarritoFragment"
-        android:label="fragment_carrito"
-        tools:layout="@layout/fragment_carrito" />
+        android:id="@+id/mapsFragment"
+        android:name="com.example.tiendaonline.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" />
 </navigation>

@@ -42,7 +42,6 @@ public class Login extends AppCompatActivity {
     }
 
     public void login(View view){
-        eliminarPreferencias();
         String enlace = URL + "?tag=consultarUsuario&correo="+txtLoginCorreo.getText().toString()+"&contrasena="+txtLoginContrasena.getText().toString();
         jrq = new JsonObjectRequest(Request.Method.GET, enlace, null, new Response.Listener<JSONObject>() {
             @Override
@@ -63,7 +62,7 @@ public class Login extends AppCompatActivity {
                             logueo.setNombre(fila.getString("contrasena"));
                         }
                         guardarCredenciales(logueo.getId(), logueo.getNombre());
-                        Toast.makeText(getApplication(), "Bienvenido", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplication(), "Bienvenido " + logueo.getNombre() + " " + logueo.getApellido(), Toast.LENGTH_SHORT).show();
 
                         Intent intent = new Intent(Login.this, MainActivity.class);
                         startActivity(intent);
@@ -98,5 +97,10 @@ public class Login extends AppCompatActivity {
     public void eliminarPreferencias(){
         SharedPreferences.Editor editor = getSharedPreferences("credenciales", Context.MODE_PRIVATE).edit();
         editor.clear().apply();
+    }
+
+    public void registrateAqui(View view){
+        Intent intent = new Intent(getApplication(), Registro.class);
+        getApplication().startActivity(intent);
     }
 }

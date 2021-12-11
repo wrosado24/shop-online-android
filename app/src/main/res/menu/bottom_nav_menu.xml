@@ -7,17 +7,12 @@
         android:title="Inicio" />
 
     <item
-        android:id="@+id/carritoFragment"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="Carrito" />
-
-    <item
         android:id="@+id/comprasFragment"
         android:icon="@drawable/ic_dashboard_black_24dp"
         android:title="Compras" />
 
     <item
-        android:id="@+id/localizacionFragment"
+        android:id="@+id/mapsFragment"
         android:icon="@drawable/ic_notifications_black_24dp"
         android:title="Localizacion" />
 

@@ -8,37 +8,38 @@
 
     <EditText
         android:id="@+id/txtRegistroNombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="132dp"
         android:ems="10"
+        android:hint="Nombres"
         android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtRegistroApellido"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="Apellidos"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtRegistroNombre" />
 
     <EditText
         android:id="@+id/txtRegistroCorreo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="Correo Electronico"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,24 +47,55 @@
 
     <EditText
         android:id="@+id/txtRegistroContrasena"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
+        android:inputType="textPassword"
+        android:hint="Contraseña"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtRegistroCorreo" />
 
     <Button
         android:id="@+id/bttnRegistrarUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_width="332dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="32dp"
         android:onClick="registro"
         android:text="Registrar Usuario"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtRegistroContrasena" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:onClick="volverLogin"
+        android:text="Volver al login"
+        android:textColor="#927DDD"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bttnRegistrarUsuario"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="334dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="64dp"
+        android:text="Create una cuenta para acceder a hacer compras de los productos"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtRegistroNombre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.532"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

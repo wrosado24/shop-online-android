@@ -39,8 +39,6 @@ public class Adaptador1 extends RecyclerView.Adapter<Adaptador1.myHolder>{
     @Override
     public void onBindViewHolder(@NonNull myHolder holder, int position) {
         Producto producto = productos.get(position);
-
-
         Glide.with(context)
                 .load(producto.getImagen())
                 .into(holder.imageView);
@@ -54,11 +52,11 @@ public class Adaptador1 extends RecyclerView.Adapter<Adaptador1.myHolder>{
             public void onClick(View v) {
                 Intent it = new Intent(context, DetalleProducto.class);
 
+                it.putExtra("idProducto", producto.getId());
                 it.putExtra("nombreProducto", producto.getNombre());
                 it.putExtra("descripcionProducto", producto.getDescripcion());
-                it.putExtra("montoProducto", String.valueOf(producto.getMonto()));
+                it.putExtra("montoProducto", producto.getMonto());
                 it.putExtra("imagenProducto", producto.getImagen());
-                it.putExtra("nombreProducto", producto.getNombre());
                 it.putExtra("nombreProducto", producto.getNombre());
 
 
