@@ -66,7 +66,6 @@ public class DetalleProducto extends AppCompatActivity {
             tTextoLogueo.setText("Iniciar sesion");
         }else{
             tTextoLogueo.setText("Cerrar sesión");
-            eliminarPreferencias();
         }
 
         tTextoLogueo.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +73,7 @@ public class DetalleProducto extends AppCompatActivity {
             public void onClick(View v) {
                 Intent it = new Intent(getApplication(), Login.class);
                 getApplication().startActivity(it);
+                eliminarPreferencias();
             }
         });
     }
@@ -125,6 +125,11 @@ public class DetalleProducto extends AppCompatActivity {
     public void eliminarPreferencias(){
         SharedPreferences.Editor editor = getApplication().getSharedPreferences("credenciales", Context.MODE_PRIVATE).edit();
         editor.clear().apply();
+    }
+
+    public void verGraficos(View view){
+        Intent it = new Intent(getApplication(), Graficos.class);
+        getApplication().startActivity(it);
     }
 
 }

@@ -78,7 +78,6 @@ public class ComprasFragment extends Fragment {
 
     public void listarCompras(){
         String enlace = URL + "?tag=listarComprasPorCliente&clienteId="+obtenerIdUsuario();
-        System.out.println("HOLAAAAAAAAAAAAAAAAAA-------------------");
         compras = new ArrayList<>();
         jrq = new JsonObjectRequest(Request.Method.GET, enlace, null, new Response.Listener<JSONObject>() {
             @Override
